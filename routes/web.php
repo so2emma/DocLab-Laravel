@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\DoctorAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get("doctor/login", [DoctorAuthController::class, "showLoginForm"])->name("docLogin");
+Route::get("doctor/Register", [DoctorAuthController::class, "register"])->name("docRegister");
+Route::post("doctor/login", [DoctorAuthController::class, "login"])->name("docLogin");
+Route::post("doctor/Register", [DoctorAuthController::class, "register"])->name("docRegister");
+Route::post("doctor/logout", [DoctorAuthController::class, "logout"])->name("docLogout");
