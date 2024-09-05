@@ -16,14 +16,27 @@ class Authenticate extends Middleware
     {
 //        return $request->expectsJson() ? null : route('login');
 
-        if(!$request->expectsJson())
-        {
-            if(Route::is('doctor.*')){
-                Auth::shouldUse('doctor');
-                return route('doctor.login');
-            }elseif (Route::is('user.*')) {
-                Auth::shouldUse('user');
-                return route('user.login');
+//        if(!$request->expectsJson())
+//        {
+////            if(Route::is('doctor.*')){
+//            if(!Auth::guard("doctor")->check()){
+////                Auth::shouldUse('doctor');
+//                return route('doctor.login');
+//            }elseif (Route::is('user.*')) {
+//                Auth::shouldUse('user');
+//                return route('user.login');
+//            }
+//        }
+
+        if (!$request->expectsJson()) {
+            if (Route::is('doctor.*')) {
+                if (!Auth::guard('doctor')->check()) {
+                    return route('doctor.login');
+                }
+            } elseif (Route::is('user.*')) {
+                if (!Auth::guard('user')->check()) {
+                    return route('user.login');
+                }
             }
         }
 
