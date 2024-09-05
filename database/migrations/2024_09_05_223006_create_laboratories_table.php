@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('postal_code');
             $table->string('contact_number');
             $table->string('email')->unique(); // For authentication
+            $table->string('phone')->unique();
             $table->string('website')->nullable();
 
             // Authentication fields
