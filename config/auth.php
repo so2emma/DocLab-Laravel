@@ -43,6 +43,10 @@ return [
         'doctor' => [
             'driver' => 'session',
             'provider' => 'doctors',
+        ],
+        'laboratory' => [
+            'driver' => 'session',
+            'provider' => 'laboratories',
         ]
     ],
 
@@ -71,6 +75,10 @@ return [
         'doctors' => [
             'driver' => 'eloquent',
             'model' => App\Models\Doctor::class,
+        ],
+        'laboratories' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Laboratory::class,
         ],
 
         // 'users' => [
@@ -106,6 +114,12 @@ return [
             'throttle' => 60,
         ],
         'doctors' => [
+            'provider' => 'users',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'laboratories' => [
             'provider' => 'users',
             'table' => 'password_reset_tokens',
             'expire' => 60,

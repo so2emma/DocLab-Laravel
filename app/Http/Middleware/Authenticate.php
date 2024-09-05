@@ -33,7 +33,11 @@ class Authenticate extends Middleware
                 if (!Auth::guard('doctor')->check()) {
                     return route('doctor.login');
                 }
-            } elseif (Route::is('user.*')) {
+            }elseif(Route::is('laboratory.*')){
+                if (!Auth::guard('laboratory')->check()) {
+                    return route('laboratory.login');
+                }
+            }elseif (Route::is('user.*')) {
                 if (!Auth::guard('user')->check()) {
                     return route('user.login');
                 }
