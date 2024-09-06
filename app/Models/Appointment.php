@@ -16,6 +16,7 @@ class Appointment extends Model
         "patient_id",
         "doctor_id",
         "laboratory_id",
+        "test_id",
         "appointment_date",
         "appointment_time",
         "status"
@@ -34,5 +35,10 @@ class Appointment extends Model
     public function laboratory(): BelongsTo
     {
         return $this->belongsTo(Laboratory::class);
+    }
+
+    public function test(): BelongsTo
+    {
+        return $this->belongsTo(Test::class);
     }
 }

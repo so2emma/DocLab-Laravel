@@ -47,5 +47,10 @@ class Laboratory extends Authenticatable
         return $this->hasMany(Appointment::class);
     }
 
+    public function test(): HasMany
+    {
+        return $this->hasMany(Test::class);
+    }
+
 
 }
