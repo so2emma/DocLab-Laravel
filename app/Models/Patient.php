@@ -13,11 +13,11 @@ class Patient extends Model
         "name",
         "email",
         "phone",
-        "password",
         "address",
         "date_of_birth",
         "gender",
-        
+        "password",
+
         // not nullable
         "blood_type",
         "allergies",
