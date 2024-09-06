@@ -1,6 +1,6 @@
 <x-doctor-layout>
     <x-slot:title>
-        Login Page
+        Login
     </x-slot:title>
 
     <section class="container mt-0 mt-md-5">
