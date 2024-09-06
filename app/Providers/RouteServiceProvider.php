@@ -23,6 +23,8 @@ class RouteServiceProvider extends ServiceProvider
 
     public const LABORATORY_DASHBOARD = "/laboratory/dashboard";
 
+    public const PATIENT_DASHBOARD = "/patient/dashboard";
+
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
      */

@@ -38,6 +38,8 @@ class RedirectIfAuthenticated
                     return redirect(RouteServiceProvider::DOCTOR_DASHBOARD);
                 }elseif ($guard === 'laboratory') {
                     return redirect(RouteServiceProvider::LABORATORY_DASHBOARD);
+                }elseif ($guard === 'patient') {
+                    return redirect(RouteServiceProvider::PATIENT_DASHBOARD);
                 }
                 return redirect(RouteServiceProvider::HOME);
             }

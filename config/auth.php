@@ -47,6 +47,10 @@ return [
         'laboratory' => [
             'driver' => 'session',
             'provider' => 'laboratories',
+        ],
+        'patient' => [
+            'driver' => 'session',
+            'provider' => 'patients',
         ]
     ],
 
@@ -79,6 +83,10 @@ return [
         'laboratories' => [
             'driver' => 'eloquent',
             'model' => App\Models\Laboratory::class,
+        ],
+        'patients' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Patient::class,
         ],
 
         // 'users' => [

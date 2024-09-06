@@ -51,18 +51,26 @@ class LabAuthController extends Controller
      */
     public function register(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255|min:3',
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:laboratories',
             'phone' => 'required|string|max:255|unique:laboratories',
+            'city' => 'required|string|max:255',
+            'state' => 'required|string|max:255',
+            'country' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
             'password' => 'required|string|min:8|confirmed',
         ]);
 
         $laboratory = Laboratory::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'password' => Hash::make($request->password),
+            'name' => $validatedData['name'],
+            'email' => $validatedData['email'],
+            'phone' => $validatedData['phone'],
+            'city' => $validatedData['city'],
+            'state' => $validatedData['state'],
+            'country' => $validatedData['country'],
+            'address' => $validatedData['address'],
+            'password' => Hash::make($validatedData['password']),
         ]);
 
         Auth::guard('laboratory')->login($laboratory);
