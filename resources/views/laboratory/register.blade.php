@@ -31,6 +31,32 @@
                     </div>
 
                     <div class="mb-3">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" name="city" class="form-control" id="city" required value={{old('city')}}>
+                        <x-input-error :messages="$errors->get('city')" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="state" class="form-label">State</label>
+                        <input type="text" name="state" class="form-control" id="state" required value={{old('state')}}>
+                        <x-input-error :messages="$errors->get('state')" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" name="country" class="form-control" id="country" required value={{old('country')}}>
+                        <x-input-error :messages="$errors->get('country')" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Contact address</label>
+                        <textarea name="address" class="form-control" id="address" required>
+                            value={{old('address')}}
+                        </textarea>
+                        <x-input-error :messages="$errors->get('address')" />
+                    </div>
+
+                    <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" name="password" class="form-control" id="password">
                         <x-input-error :messages="$errors->get('password')" />

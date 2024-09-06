@@ -16,20 +16,15 @@ return new class extends Migration
 
             // Laboratory details
             $table->string('name');
-            $table->string('address');
+            $table->string('email')->unique();
+            $table->string('phone')->unique();
             $table->string('city');
             $table->string('state');
             $table->string('country');
-            $table->string('postal_code');
-            $table->string('contact_number');
-            $table->string('email')->unique(); // For authentication
-            $table->string('phone')->unique();
+            $table->string('address');
+            $table->string('password');
+            $table->rememberToken();
             $table->string('website')->nullable();
-
-            // Authentication fields
-            $table->string('password'); // For storing hashed passwords
-            $table->rememberToken(); // For "remember me" functionality
-
             // Certification & Accreditation
             $table->string('license_number')->nullable();
             $table->date('license_expiry')->nullable();
