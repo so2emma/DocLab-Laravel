@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 require __DIR__.'./doctor.php';
+require __DIR__.'./laboratory.php';
