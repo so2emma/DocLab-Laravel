@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <x-lab-navbar />
+    <x-patient-navbar />
     {{ $slot }}
 </body>
 

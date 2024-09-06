@@ -51,7 +51,7 @@
                     <div class="mb-3">
                         <label for="address" class="form-label">Contact address</label>
                         <textarea name="address" class="form-control" id="address" required>
-                            value={{old('address')}}
+                            {{old('address')}}
                         </textarea>
                         <x-input-error :messages="$errors->get('address')" />
                     </div>

@@ -6,7 +6,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            @auth('laboratory')
+            @auth('patient')
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -20,13 +20,13 @@
                 </ul>
             @endauth
 
-            @guest('laboratory')
+            @guest('patient')
                 <ul class="navbar-nav ">
                     <li class="nav-item mb-3 mb-md-0">
-                        <a href="{{ route('laboratory.login') }}" class="me-2 btn btn-outline-dark fw-medium">LOGIN</a>
+                        <a href="{{ route('patient.login') }}" class="me-2 btn btn-outline-dark fw-medium">LOGIN</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('laboratory.register') }}" class="btn btn-outline-dark fw-medium">REGISTER</a>
+                        <a href="{{ route('patient.register') }}" class="btn btn-outline-dark fw-medium">REGISTER</a>
                     </li>
                 </ul>
             @endguest
