@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\DoctorAuthController;
 use App\Http\Controllers\Doctor\DocDashController;
+use App\Http\Controllers\Doctor\DocLaboratoryController;
+use App\Http\Controllers\Doctor\DocPatientController;
 
 Route::prefix("doctor")->name("doctor.")->group(function () {
     Route::group(["middleware" => "guest:doctor"], function () {
@@ -22,6 +24,13 @@ Route::prefix("doctor")->name("doctor.")->group(function () {
         Route::post("logout", [DoctorAuthController::class, "logout"])->name("logout");
 
         Route::get("dashboard", [DocDashController::class, "dashboard"])->name("dashboard");
+
+        //for patients
+        Route::get("patients/index", [DocPatientController::class, "index"])->name("patient.index");
+        Route::get("patients/search", [DocPatientController::class, "index_search"])->name("patient.search");
+
+        //for laboratories
+        Route::get("laboratory/index", [DocLaboratoryController::class, "index"])->name("laboratory.index");
     });
 });
 
