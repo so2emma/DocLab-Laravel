@@ -17,10 +17,9 @@ class TestFactory extends Factory
     public function definition(): array
     {
         return [
-            // 'laboratory_id' => \App\Models\Laboratory::factory(), // Associates the test with a lab
-            'name' => fake()->word(), // Random test name
-            'description' => fake()->sentence(), // Short description of the test
-            'price' => fake()->randomFloat(2, 50, 500), // Random price between 50 and 500
+            'name' => fake()->word(),
+            'description' => fake()->sentence(),
+            'price' => fake()->randomFloat(2, 50, 500),
         ];
     }
 }

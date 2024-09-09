@@ -16,8 +16,7 @@ class Laboratory extends Authenticatable
         "city",
         "state",
         "country",
-        "postal_code",
-        "contact_number",
+        "phone",
         "email",
         "website",
         "password",
@@ -28,8 +27,8 @@ class Laboratory extends Authenticatable
         "accreditation_body",
 
         //operational details
-        "operational_hours",
-        "services_offerred",
+        // "operating_hours",
+        // "services_offered",
         "specializations",
         "status"
     ];

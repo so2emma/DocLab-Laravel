@@ -29,7 +29,7 @@ class Patient extends Model
         "emergency_contact_name",
         "emergency_contact_relationship",
         "emergency_contact_phone_number",
-        "prefferred_language",
+        "preferred_language",
         "insurance_details",
         "marital_status",
 

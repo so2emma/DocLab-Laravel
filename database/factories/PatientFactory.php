@@ -28,9 +28,9 @@ class PatientFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'phone' => fake()->unique()->phoneNumber(),
             'address' => fake()->address(),
-            'date_of_birth' => fake()->date('Y-m-d', '2005-01-01'), // Random DOB before 2005
+            'date_of_birth' => fake()->date('Y-m-d', '2005-01-01'),
             'gender' => fake()->randomElement(['male', 'female', 'other']),
-            'password' => static::$password ??= Hash::make('password'), // Default hashed password
+            'password' => static::$password ??= Hash::make('password'),
             'blood_type' => fake()->randomElement(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']),
             'allergies' => fake()->sentence(),
             'chronic_conditions' => fake()->sentence(),
@@ -41,9 +41,9 @@ class PatientFactory extends Factory
             'emergency_contact_relationship' => fake()->randomElement(['spouse', 'parent', 'sibling', 'friend']),
             'emergency_contact_phone_number' => fake()->phoneNumber(),
             'preferred_language' => fake()->randomElement(['English', 'Spanish', 'French', 'German']),
-            'insurance_details' => fake()->text(50), // Short text for insurance details
+            'insurance_details' => fake()->text(50),
             'marital_status' => fake()->randomElement(['single', 'married', 'divorced', 'widowed']),
-            'remember_token' => Str::random(10), // Generates random remember token
+            'remember_token' => Str::random(10),
         ];
     }
 }

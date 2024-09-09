@@ -19,7 +19,7 @@ class Doctor extends Authenticatable
         "years_of_experience",
         "qualification",
         "bio",
-        "profile",
+        "profile_picture",
         "gender",
         "date_of_birth",
         "address",

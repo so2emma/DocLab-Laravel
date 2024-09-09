@@ -21,7 +21,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->string('specialization')->nullable();
             $table->integer('years_of_experience')->nullable();
-            $table->string('qualifications')->nullable();
+            $table->string('qualification')->nullable();
             $table->text('bio')->nullable();
             $table->string('profile_picture')->nullable();
             $table->string('gender')->nullable();

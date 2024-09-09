@@ -31,10 +31,10 @@ return new class extends Migration
             $table->string('accreditation_body')->nullable();
 
             // Operational details
-            $table->json('operating_hours')->nullable();
-            $table->json('services_offered')->nullable();
+            // $table->json('operating_hours')->nullable();
+            // $table->json('services_offered')->nullable();
             $table->string('specializations')->nullable();
-            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->enum('status', ['active', 'inactive', 'pending'])->default('active');
             $table->timestamps();
         });
     }

@@ -26,18 +26,18 @@ class DoctorFactory extends Factory
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
-            'password' => static::$password ??= Hash::make('password'), // Default hashed password
+            'password' => static::$password ??= Hash::make('password'),
             'phone' => fake()->unique()->phoneNumber(),
             'specialization' => fake()->randomElement(['Cardiologist', 'Dermatologist', 'Neurologist', 'Pediatrician', 'Surgeon']),
-            'years_of_experience' => fake()->numberBetween(1, 40), // Random years between 1 and 40
+            'years_of_experience' => fake()->numberBetween(1, 40),
             'qualification' => fake()->randomElement(['MBBS', 'MD', 'DO', 'PhD']),
             'bio' => fake()->paragraph(),
-            'profile_picture' => fake()->imageUrl(640, 480, 'people', true, 'Doctor Profile'), // Random profile image URL
+            'profile_picture' => fake()->imageUrl(640, 480, 'people', true, 'Doctor Profile'),
             'gender' => fake()->randomElement(['male', 'female', 'other']),
-            'date_of_birth' => fake()->date('Y-m-d', '1980-01-01'), // Random DOB before 1980
+            'date_of_birth' => fake()->date('Y-m-d', '1980-01-01'),
             'address' => fake()->address(),
             'availability' => fake()->randomElement(['full-time', 'part-time', 'on-call']),
-            'remember_token' => Str::random(10), // Generates random remember token
+            'remember_token' => Str::random(10),
         ];
     }
 }

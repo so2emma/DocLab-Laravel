@@ -32,15 +32,15 @@ class LaboratoryFactory extends Factory
             'phone' => fake()->phoneNumber(),
             'email' => fake()->unique()->safeEmail(),
             'website' => fake()->domainName(),
-            'password' => static::$password ??= Hash::make('password'), // Default hashed password
-            'license_number' => fake()->regexify('[A-Z0-9]{10}'), // Random alphanumeric license number
-            'license_expiry' => fake()->date('Y-m-d', '2030-12-31'), // License expiry date
+            'password' => static::$password ??= Hash::make('password'),
+            'license_number' => fake()->regexify('[A-Z0-9]{10}'),
+            'license_expiry' => fake()->date('Y-m-d', '2030-12-31'),
             'accreditation_body' => fake()->company(),
             // 'operating_hours' => fake()->randomElement(['8 AM - 5 PM', '24/7', '9 AM - 9 PM']),
             // 'services_offered' => fake()->sentence(), // Short description of services offered
             'specializations' => fake()->randomElement(['Pathology', 'Radiology', 'Microbiology', 'Biochemistry']),
             'status' => fake()->randomElement(['active', 'inactive', 'pending']),
-            'remember_token' => Str::random(10), // Random remember token
+            'remember_token' => Str::random(10),
         ];
     }
 }
