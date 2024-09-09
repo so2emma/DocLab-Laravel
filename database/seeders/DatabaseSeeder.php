@@ -26,8 +26,22 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         Doctor::factory(30)->create();
+        Doctor::factory()->create([
+            "name" => "Oso Emmanuel",
+            "email" => "admin@admin.com"
+        ]);
+
         Laboratory::factory(30)->create();
+        Laboratory::factory()->create([
+            "name" => "Oso Emmanuel",
+            "email" => "admin@admin.com"
+        ]);
+
         Patient::factory(50)->create();
+        Patient::factory()->create([
+            "name" => "Oso Emmanuel",
+            "email" => "admin@admin.com"
+        ]);
 
         $this->call(TestSeeder::class);
         $this->call(AppointmentSeeder::class);
