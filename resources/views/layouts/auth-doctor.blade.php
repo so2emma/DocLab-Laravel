@@ -63,10 +63,10 @@
             <div class="mx-3">
                 <p class="fw-bold fs-3 text-white">DOCLAB</p>
             </div>
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#clients">Clients</a>
-            <a href="#contact">Contact</a>
+            <a href="{{ route("doctor.dashboard") }}">Dashboard</a>
+            <a href="{{ route("doctor.patient.index") }}">Patients</a>
+            <a href="{{ route("doctor.laboratory.index") }}">Laboratories</a>
+            <a href="">Appointments</a>
         </div>
     </div>
 
@@ -112,7 +112,7 @@
             </div>
         </nav>
 
-        <div class="container">
+        <div>
             {{ $slot }}
         </div>
 

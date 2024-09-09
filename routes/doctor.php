@@ -28,9 +28,12 @@ Route::prefix("doctor")->name("doctor.")->group(function () {
         //for patients
         Route::get("patients/index", [DocPatientController::class, "index"])->name("patient.index");
         Route::get("patients/search", [DocPatientController::class, "index_search"])->name("patient.search");
+        Route::get("patients/search/{patient}", [DocPatientController::class, "show"])->name("patient.show");
 
         //for laboratories
         Route::get("laboratory/index", [DocLaboratoryController::class, "index"])->name("laboratory.index");
+        Route::get("laboratory/search", [DocLaboratoryController::class, "index_search"])->name("laboratory.search");
+        Route::get("laboratory/search/{laboratory}", [DocLaboratoryController::class, "show"])->name("laboratory.show");
     });
 });
 

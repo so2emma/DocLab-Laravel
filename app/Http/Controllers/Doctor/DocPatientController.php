@@ -20,4 +20,9 @@ class DocPatientController extends Controller
                     ->get();
         return view("doctor.patient.index", ["patients" => $patients ]);
     }
+
+    public function show(Patient $patient): View
+    {
+        return view("doctor.patient.show", ["patient" => $patient]);
+    }
 }
