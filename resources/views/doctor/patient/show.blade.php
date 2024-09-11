@@ -4,10 +4,15 @@
     </x-slot:title>
 
     <div class="container mt-4 ps-0 ps-md-5 mb-5">
-        <h1 class="fw-light text-secondary">
-            <span class="fw-medium text-dark">{{ $patient->name }}</span>
-        </h1>
+        <div class="d-flex ">
+            <h1 class="fw-light text-secondary">
+                <span class="fw-medium text-dark">{{ $patient->name }}</span>
+            </h1>
 
+            <h1 class="ms-5">
+                <span class="fw-medium text-dark">ID: #{{ $patient->id }}</span>
+            </h1>
+        </div>
 
         <div class="container-fluid mt-3" >
             <p class="fw-bold border-bottom border-secondary pb-3">PROFILE DETAILS</p>

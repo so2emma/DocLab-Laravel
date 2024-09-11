@@ -34,7 +34,8 @@ class Laboratory extends Authenticatable
     ];
 
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     protected $casts = [
@@ -46,10 +47,8 @@ class Laboratory extends Authenticatable
         return $this->hasMany(Appointment::class);
     }
 
-    public function test(): HasMany
+    public function tests(): HasMany
     {
         return $this->hasMany(Test::class);
     }
-
-
 }
