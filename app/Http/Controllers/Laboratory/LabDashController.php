@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\Laboratory;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class LabDashController extends Controller
 {
     public function dashboard()
     {
-        return view("laboratory.dashboard");
+        $laboratory = Auth::guard('laboratory')->user();
+        return view("laboratory.dashboard", ['laboratory' => $laboratory]);
     }
 }

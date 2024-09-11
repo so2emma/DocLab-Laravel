@@ -48,7 +48,7 @@ class DocAppointmentController extends Controller
             'appointment_time' => 'required|date_format:H:i',
         ]);
 
-        
+
         $laboratory = Test::find($validatedData['test_id'])->laboratory->id;
 
         Appointment::create([
