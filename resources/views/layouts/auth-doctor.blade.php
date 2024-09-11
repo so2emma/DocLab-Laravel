@@ -66,7 +66,7 @@
             <a href="{{ route("doctor.dashboard") }}">Dashboard</a>
             <a href="{{ route("doctor.patient.index") }}">Patients</a>
             <a href="{{ route("doctor.laboratory.index") }}">Laboratories</a>
-            <a href="">Appointments</a>
+            <a href="{{ route("doctor.appointment.index") }}">Appointments</a>
         </div>
     </div>
 

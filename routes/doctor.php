@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\DoctorAuthController;
+use App\Http\Controllers\Doctor\DocAppointmentController;
 use App\Http\Controllers\Doctor\DocDashController;
 use App\Http\Controllers\Doctor\DocLaboratoryController;
 use App\Http\Controllers\Doctor\DocPatientController;
@@ -34,6 +35,12 @@ Route::prefix("doctor")->name("doctor.")->group(function () {
         Route::get("laboratory/index", [DocLaboratoryController::class, "index"])->name("laboratory.index");
         Route::get("laboratory/search", [DocLaboratoryController::class, "index_search"])->name("laboratory.search");
         Route::get("laboratory/search/{laboratory}", [DocLaboratoryController::class, "show"])->name("laboratory.show");
+
+        //for appointment
+        Route::get("appointment/view", [DocAppointmentController::class, "index"])->name("appointment.index");
+        Route::get("appointment/show/{appointment}", [DocAppointmentController::class, "show"])->name("appointment.show");
+        Route::get("appointments/create/{laboratory}", [DocAppointmentController::class, "create"])->name("appointment.create");
+        Route::post("appointments/store", [DocAppointmentController::class, "store"])->name("appointment.store");
     });
 });
 

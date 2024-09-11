@@ -20,6 +20,11 @@ class Appointment extends Model
         "status"
     ];
 
+    protected $casts = [
+        'appointment_time' => 'datetime:H:i:s',
+    ];
+
+
     public function patient(): BelongsTo
     {
         return $this->belongsTo(Patient::class);
