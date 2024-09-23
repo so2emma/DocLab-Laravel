@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +13,13 @@
             height: 100vh;
             width: 250px;
             position: fixed;
+            z-index: 1;
             top: 0;
             left: 0;
             background-color: #343a40;
             padding-top: 20px;
+            overflow-x: hidden;
+            transition: 0.5s
         }
 
         .sidebar a {
@@ -60,13 +64,19 @@
     <!-- Collapsible Sidebar -->
     <div class="collapse d-lg-block" id="sidebar">
         <div class="sidebar">
+            <button class="navbar-toggler text-alert" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar"
+                aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
             <div class="mx-3">
                 <p class="fw-bold fs-3 text-white">DOCLAB</p>
             </div>
-            <a href="{{ route("doctor.dashboard") }}">Dashboard</a>
-            <a href="{{ route("doctor.patient.index") }}">Patients</a>
-            <a href="{{ route("doctor.laboratory.index") }}">Laboratories</a>
-            <a href="{{ route("doctor.appointment.index") }}">Appointments</a>
+            
+            <a href="{{ route('doctor.dashboard') }}">Dashboard</a>
+            <a href="{{ route('doctor.patient.index') }}">Patients</a>
+            <a href="{{ route('doctor.laboratory.index') }}">Laboratories</a>
+            <a href="{{ route('doctor.appointment.index') }}">Appointments</a>
         </div>
     </div>
 

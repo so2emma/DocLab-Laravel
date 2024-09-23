@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Laboratory;
+namespace App\Http\Controllers\Patient;
 
 use Illuminate\View\View;
 use App\Models\Appointment;
@@ -8,30 +8,30 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class LabAppointmentController extends Controller
+class PatientAppointmentController extends Controller
 {
     public function pending(): View
     {
-        $pending = Auth::guard('laboratory')->user()->appointments->where('status', '=', 'pending');
-        return view("laboratory.appointment.pending", ["pending" => $pending]);
+        $pending = Auth::guard('patient')->user()->appointments->where('status', '=', 'pending');
+        return view("patient.appointment.pending", ["pending" => $pending]);
     }
 
 
     public function confirmed(): View
     {
-        $confirmed = Auth::guard('laboratory')->user()->appointments->where('status', '=', 'confirmed');
-        return view("laboratory.appointment.confirmed", ["confirmed" => $confirmed]);
+        $confirmed = Auth::guard('patient')->user()->appointments->where('status', '=', 'confirmed');
+        return view("patient.appointment.confirmed", ["confirmed" => $confirmed]);
     }
 
     public function completed(): View
     {
-        $completed = Auth::guard('laboratory')->user()->appointments->where('status', '=', 'completed');
-        return view("laboratory.appointment.completed", ["completed" => $completed]);
+        $completed = Auth::guard('patient')->user()->appointments->where('status', '=', 'completed');
+        return view("patient.appointment.completed", ["completed" => $completed]);
     }
 
     public function show(Appointment $appointment): View
     {
-        return view("laboratory.appointment.show", compact("appointment"));
+        return view("patient.appointment.show", compact("appointment"));
     }
 
     public function update_status(Request $request, Appointment $appointment)

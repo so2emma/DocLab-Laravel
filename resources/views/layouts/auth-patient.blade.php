@@ -17,7 +17,8 @@
             padding-top: 20px;
         }
 
-        .sidebar a {
+        .sidebar a,
+        .sidenav {
             padding: 10px 15px;
             text-decoration: none;
             font-size: 18px;
@@ -62,10 +63,11 @@
             <div class="mx-3">
                 <p class="fw-bold fs-3 text-white">DOCLAB</p>
             </div>
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#clients">Clients</a>
-            <a href="#contact">Contact</a>
+            <a href="{{ route('patient.dashboard') }}">Dashboard</a>
+            <p class="sidenav border-bottom border-light mb-0">APPOINTMENTS</p>
+            <a href="{{ route('patient.appointment.pending') }}">Pending</a>
+            <a href="{{ route('patient.appointment.confirmed') }}">Confirmed</a>
+            <a href="{{ route('patient.appointment.completed') }}">Completed</a>
         </div>
     </div>
 

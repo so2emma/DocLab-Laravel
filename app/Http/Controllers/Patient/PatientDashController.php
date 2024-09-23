@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\Patient;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PatientDashController extends Controller
 {
     public function dashboard()
     {
-        return view("patient.dashboard");
+        $patient = Auth::guard('patient')->user();
+        return view("patient.dashboard", ["patient" => $patient]);
     }
 }
